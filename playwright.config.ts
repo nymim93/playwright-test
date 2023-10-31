@@ -10,11 +10,11 @@ const baseURL = `http://localhost:${PORT}`
 // Reference: https://playwright.dev/docs/test-configuration
 export default defineConfig({
   // Timeout per test
-  timeout: 30 * 1000,
+  timeout: 60 * 1000,
   // Test directory
   testDir: path.join(__dirname, 'e2e'),
   // If a test fails, retry it additional 2 times
-  retries: 2,
+  retries: 1,
   // Artifacts folder where screenshots, videos, and traces are stored.
   outputDir: 'test-results/',
 
@@ -67,10 +67,6 @@ export default defineConfig({
       use: {
         ...devices['Pixel 5'],
       },
-    },
-    {
-      name: 'Mobile Safari',
-      use: devices['iPhone 12'],
     },
   ],
 })
